@@ -1,0 +1,22 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": false,
+        "node": true,
+        "es6": true
+    },
+    "plugins": [
+        "react",
+        "react-native"
+    ],
+    "extends": "airbnb",
+
+    "rules": {
+        "indent": [2, "tab", {"SwitchCase": 1}],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "no-else-return": 0,
+        "consistent-return": 0,
+        "react/jsx-indent": [2, 'tab'],
+        "react/jsx-indent-props": [2, 'tab']
+    }
+}
