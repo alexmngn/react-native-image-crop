@@ -1,16 +1,33 @@
 # react-native-image-crop
 
-Image crop editor component for iOS and Android
+Image crop editor component for iOS and Android. Move the image in the area and crop it. <br />
+
+## Installation
+
+This component is dependent of `react-native-image-resizer` [(See Github)](https://github.com/bamlab/react-native-image-resizer) which needs to be installed and linked to your project before.
+
+If you don't have `rnpm` installed on your computer, install it first:
+
+```
+npm install -g rnpm
+```
+
+Then, install and link the peer dependency:
+
+```
+npm install --save react-native-image-resizer
+rnpm link
+```
+
+Now you can install this component
+
+```
+npm install --save react-native-image-crop
+```
 
 ## Usage
 
-Install the Component
-
-```
-npm install react-native-image-crop
-```
-
-Import it
+Import the component into the file you want to use it:
 
 ```js
 import ImageCrop from 'react-native-image-crop';
@@ -41,6 +58,8 @@ onButtonPress() {
 }
 ```
 
+Note: If you use a large image, you might need to preload it before using this component.
+
 
 ## Properties
 
@@ -60,3 +79,8 @@ onButtonPress() {
 |  	Method |  	Description |  	 Example |
 |---	|---	|---	|
 |  	`crop()` |  	Crop and, if necessary, resize the image. This method returns a Promise. |  	`this.imageCrop.crop().then((uri) => { this.setState({ uri })})` |
+
+
+## Todo
+
+* Pinch and zoom. Add new properties `defaultZoom`, `minZoom`, `maxZoom`
