@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npm install --save react-native-image-resizer",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alexis Mangin",
@@ -12,9 +11,8 @@
   "keywords": [
     "react",
     "native",
-    "image",
+    "images",
     "photos",
-    "crop",
     "cropping",
     "editor"
   ],
@@ -29,7 +27,9 @@
   },
   "dependencies": {
     "react": "~15.2.1",
-    "react-native": "^0.31.0",
-    "react-native-image-resizer": "0.0.9"
+    "react-native": "^0.31.0"
+  },
+  "peerDependencies": {
+    "react-native-image-resizer": "0.0.10"
   }
 }
