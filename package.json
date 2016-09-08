@@ -1,13 +1,21 @@
 {
   "name": "react-native-image-crop",
   "version": "1.0.0",
-  "description": "",
+  "description": "Crop images with React Native",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alexis Mangin",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexmngn/react-native-image-crop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexmngn/react-native-image-crop/issues"
+  },
+  "homepage": "https://github.com/alexmngn/react-native-image-crop#readme",
   "keywords": [
     "react",
     "native",
@@ -15,6 +23,11 @@
     "photos",
     "cropping",
     "editor"
+  ],
+  "files": [
+    "index.js",
+    "package.json",
+    "README.md"
   ],
   "devDependencies": {
     "babel-eslint": "^6.1.2",
@@ -25,11 +38,9 @@
     "eslint-plugin-react": "^6.1.2",
     "eslint-plugin-react-native": "^2.0.0"
   },
-  "dependencies": {
-    "react": "~15.2.1",
-    "react-native": "^0.31.0"
-  },
   "peerDependencies": {
+    "react": "~15.2.1",
+    "react-native": "^0.31.0",
     "react-native-image-resizer": "0.0.10"
   }
 }
