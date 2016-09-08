@@ -74,9 +74,9 @@ class ImageCrop extends Component {
 	}
 
 	componentDidMount() {
-		Image.getSize(this.props.source, (originalImageWidth, originalImageHeight) => {
+		Image.getSize(this.props.source.uri, (originalImageWidth, originalImageHeight) => {
 			this.setState({ originalImageWidth, originalImageHeight });
-		}, () => {});
+		});
 	}
 
 	componentDidUpdate() {
@@ -111,7 +111,7 @@ class ImageCrop extends Component {
 
 	getPanResponder() {
 		return PanResponder.create({
-			onMoveShouldSetPanResponderCapture: () => true,
+			onMoveShouldSetPanResponder: () => true,
 			onPanResponderMove: (event, { dx, dy }) => {
 				let imageTop = this.previousImageTop + dy;
 				let imageLeft = this.previousImageLeft + dx;
@@ -289,7 +289,7 @@ class ImageCrop extends Component {
 
 		return new Promise((resolve, reject) => {
 			ImageEditor.cropImage(
-				this.props.source,
+				this.props.source.uri,
 				cropData,
 				(croppedUri) => {
 					if (this.props.cropWidth && this.props.cropHeight) {
