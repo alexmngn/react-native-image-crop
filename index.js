@@ -111,6 +111,7 @@ class ImageCrop extends Component {
 
 	getPanResponder() {
 		return PanResponder.create({
+			onStartShouldSetPanResponder: () => true,
 			onMoveShouldSetPanResponder: () => true,
 			onPanResponderMove: (event, { dx, dy }) => {
 				let imageTop = this.previousImageTop + dy;
