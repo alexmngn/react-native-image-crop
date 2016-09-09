@@ -36,6 +36,7 @@ class ImageCrop extends Component {
 		containerPaddingBottom: PropTypes.number,
 		cropWidth: PropTypes.number,
 		cropHeight: PropTypes.number,
+		cropQuality: PropTypes.number,
 	}
 
 	static defaultProps = {
@@ -43,6 +44,7 @@ class ImageCrop extends Component {
 		containerPaddingLeft: 20,
 		containerPaddingRight: 20,
 		containerPaddingBottom: 20,
+		cropQuality: 80,
 	}
 
 	constructor(props) {
@@ -293,22 +295,26 @@ class ImageCrop extends Component {
 				this.props.source.uri,
 				cropData,
 				(croppedUri) => {
-					if (this.props.cropWidth && this.props.cropHeight) {
-						this.resize(croppedUri).then((resizedUri) =>
-							resolve(resizedUri)
-						);
-					} else {
-						resolve(croppedUri);
-					}
+					const { cropWidth, cropHeight } = this.props;
+					this.resize(
+						croppedUri,
+						(cropWidth || cropData.size.width),
+						(cropHeight || cropData.size.height)
+					).then((resizedUri) =>
+						resolve(resizedUri)
+					);
 				},
 				(failure) => reject(failure)
 			);
 		});
 	}
 
-	resize(uri) {
-		const { cropWidth, cropHeight } = this.props;
-		return ImageResizer.createResizedImage(uri, cropWidth, cropHeight, 'JPEG', 100, 0, null);
+	resize(uri, width, height) {
+		let { cropQuality } = this.props;
+		if (!Number.isInteger(cropQuality) || cropQuality < 0 || cropQuality > 100) {
+			cropQuality = ImageCrop.defaultProps.cropQuality;
+		}
+		return ImageResizer.createResizedImage(uri, width, height, 'JPEG', cropQuality, 0, null);
 	}
 
 	renderImage(isLower = false) {

@@ -1,6 +1,6 @@
 {
   "name": "react-native-image-crop",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Crop images with React Native",
   "main": "index.js",
   "scripts": {

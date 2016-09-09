@@ -74,6 +74,7 @@ Note: If you use a large image, you might need to preload it before using this c
 |  	`containerPaddingBottom` |  	Number |  	Apply padding at the bottom of the image <br> Default: 20 |
 |  	`cropWidth` |  	Number |  	Enforce the cropped width of the image. This property must be used with `cropHeight` |
 |  	`cropHeight` |  	Number |  	Enforce the cropped height of the image. This property must be used with `cropWidth` |
+|  	`cropQuality` |  	Number |  	Image quality, from 0 to 100 <br> Default: 80 |
 
 
 ## Methods
