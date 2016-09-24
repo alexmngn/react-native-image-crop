@@ -41,10 +41,5 @@
     "eslint-plugin-jsx-a11y": "^2.1.0",
     "eslint-plugin-react": "^6.1.2",
     "eslint-plugin-react-native": "^2.0.0"
-  },
-  "peerDependencies": {
-    "react": "~15.2.1",
-    "react-native": "^0.31.0",
-    "react-native-image-resizer": "0.0.10"
   }
 }
