@@ -43,7 +43,7 @@ Use the component directly in your code. The component will automatically fit th
 		ref={(c) => { this.imageCrop = c; }}
 		cropWidth={500}
 		cropHeight={500}
-		image={{
+		source={{
 			uri: 'https://c1.staticflickr.com/9/8073/28582653114_d154039cb9_k.jpg',
 		}}
 	/>
@@ -67,7 +67,7 @@ Note: If you use a large image, you might need to preload it before using this c
 
 |  	Property |  	Type |  	Description |
 |---	|---	|---	|
-|  	`image`|  	ImageSource <br>https://facebook.github.io/react-native/docs/image.html#source | Source of the image. <br> This property is mandatory |
+|  	`source`|  	ImageSource <br>https://facebook.github.io/react-native/docs/image.html#source | Source of the image. <br> This property is mandatory |
 |  	`containerPaddingLeft` |  	Number |  	Apply padding on the left of the image <br> Default: 20 |
 |  	`containerPaddingRight` |  	Number |  	Apply padding on the right of the image <br> Default: 20 |
 |  	`containerPaddingTop` |  	Number |  		Apply padding at the top of the image <br> Default: 20 |
