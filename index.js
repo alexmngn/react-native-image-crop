@@ -335,7 +335,7 @@ class ImageCrop extends Component {
 						left: (isLower ? 0 : this.state.cropPaddingLeft),
 						...Platform.select({
 							android: {
-                backgroundColor: (isLower) ? 'rgba(255,255,255, 0.5)' : 'transparent',
+                backgroundColor: (isLower) ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
 							},
 						}),
 					}]}
@@ -358,7 +358,7 @@ class ImageCrop extends Component {
 						{Platform.OS === 'android' && isLower && (
               <View style={{
 								flex: 1,
-								backgroundColor: (isLower) ? 'rgba(255,255,255,0.5)' : 'transparent',
+								backgroundColor: (isLower) ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
 							}} />
 						)}
 					</Image>
