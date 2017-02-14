@@ -5,6 +5,7 @@ import {
 	StyleSheet,
 	ImageEditor,
 	PanResponder,
+	Platform,
 } from 'react-native';
 
 import ImageResizer from 'react-native-image-resizer';
@@ -332,6 +333,11 @@ class ImageCrop extends Component {
 						),
 						top: (isLower ? 0 : this.state.cropPaddingTop),
 						left: (isLower ? 0 : this.state.cropPaddingLeft),
+						...Platform.select({
+							android: {
+                backgroundColor: (isLower) ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
+							},
+						}),
 					}]}
 				>
 					<Image
@@ -342,9 +348,20 @@ class ImageCrop extends Component {
 							height: this.state.imageHeight,
 							left: this.state.imageLeft + (isLower ? 0 : -this.getTotalPaddingLeft()),
 							top: this.state.imageTop + (isLower ? 0 : -this.getTotalPaddingTop()),
-							opacity: (isLower ? 0.5 : 1),
+							...Platform.select({
+								ios: {
+                  opacity: (isLower ? 0.5 : 1),
+								},
+							}),
 						}]}
-					/>
+					>
+						{Platform.OS === 'android' && isLower && (
+              <View style={{
+								flex: 1,
+								backgroundColor: (isLower) ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
+							}} />
+						)}
+					</Image>
 				</View>
 			);
 		}
