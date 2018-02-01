@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import {
 	View,
 	Image,
+	ImageBackground,
 	StyleSheet,
 	ImageEditor,
 	PanResponder,
@@ -334,7 +335,7 @@ class ImageCrop extends Component {
 						left: (isLower ? 0 : this.state.cropPaddingLeft),
 					}]}
 				>
-					<Image
+					<ImageBackground
 						resizeMode="cover"
 						source={this.props.source}
 						style={[styles.image, {
