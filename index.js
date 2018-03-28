@@ -6,7 +6,7 @@ import {
 	ImageEditor,
 	PanResponder,
 } from 'react-native';
-
+import PropTypes from 'prop-types';
 import ImageResizer from 'react-native-image-resizer';
 
 const styles = StyleSheet.create({
