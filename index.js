@@ -81,10 +81,18 @@ class ImageCrop extends Component {
 		});
 	}
 
-	componentDidUpdate() {
-		if (this.state.originalImageWidth && this.state.containerWidth && !this.state.imageWidth) {
-			this.setCropArea();
-		}
+	componentDidUpdate(prevProps) {
+        if(prevProps.source.uri !== this.props.source.uri){
+            this.panResponder = this.getPanResponder();
+            Image.getSize(this.props.source.uri, (originalImageWidth, originalImageHeight) => {
+                this.setState({ originalImageWidth, originalImageHeight });
+                this.setCropArea();
+            });
+        } else{
+            if (this.state.originalImageWidth && this.state.containerWidth && !this.state.imageWidth) {
+                this.setCropArea();
+            }
+        }
 	}
 
 	getTotalPaddingTop() {
